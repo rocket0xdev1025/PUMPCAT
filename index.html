@@ -47,26 +47,35 @@
   </script>
   <style>
     :root {
-      --ca: "TBA";
+      --ca: "HBsr5gwppcXcT5MRjzEjKYAum5h9zgHrZsJGXUVkpump";
+      color-scheme: light;
     }
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 6rem;
+      background: #f4fff8;
     }
 
     body {
-      background:
-        radial-gradient(1200px 600px at 10% -10%, rgba(30, 200, 90, 0.22), transparent 55%),
-        radial-gradient(900px 500px at 110% 8%, rgba(62, 220, 122, 0.18), transparent 50%),
-        linear-gradient(180deg, #f7fff9 0%, #ffffff 28%, #f3fdf6 58%, #ffffff 100%);
-    }
-
-    .paw-pattern {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='%2314a348' fill-opacity='0.06'%3E%3Cellipse cx='70' cy='82' rx='22' ry='18'/%3E%3Cellipse cx='46' cy='58' rx='10' ry='13'/%3E%3Cellipse cx='64' cy='48' rx='10' ry='13'/%3E%3Cellipse cx='84' cy='50' rx='10' ry='13'/%3E%3Cellipse cx='98' cy='64' rx='10' ry='13'/%3E%3C/g%3E%3C/svg%3E");
+      background-color: #f4fff8;
+      background-image:
+        radial-gradient(1100px 520px at 8% -8%, rgba(30, 200, 90, 0.28), transparent 58%),
+        radial-gradient(900px 480px at 100% 0%, rgba(255, 255, 255, 0.95), transparent 55%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill='%2314a348' fill-opacity='0.07'%3E%3Cellipse cx='90' cy='108' rx='22' ry='18'/%3E%3Cellipse cx='66' cy='84' rx='10' ry='13'/%3E%3Cellipse cx='84' cy='74' rx='10' ry='13'/%3E%3Cellipse cx='104' cy='76' rx='10' ry='13'/%3E%3Cellipse cx='118' cy='90' rx='10' ry='13'/%3E%3C/g%3E%3C/svg%3E"),
+        linear-gradient(180deg, #e9fff1 0%, #ffffff 24%, #f3fdf6 58%, #ffffff 100%);
+      background-attachment: fixed, fixed, scroll, scroll;
     }
 
     .font-display {
-      letter-spacing: 0.04em;
+      letter-spacing: 0.03em;
+    }
+
+    .title-pop {
+      color: #1ec85a;
+      -webkit-text-stroke: 2px #14532d;
+      paint-order: stroke fill;
+      text-shadow: 4px 4px 0 #14532d;
     }
 
     .ticker {
@@ -150,7 +159,7 @@
     }
   </style>
 </head>
-<body class="font-sans text-pump-ink paw-pattern overflow-x-hidden">
+<body class="font-sans text-pump-ink overflow-x-hidden">
   <!-- Floating pills -->
   <div class="pointer-events-none fixed inset-0 z-0 overflow-hidden" aria-hidden="true">
     <span class="float-slow absolute left-[6%] top-[18%] h-10 w-16 rounded-full bg-gradient-to-b from-white to-pump-500 border-[3px] border-pump-800 opacity-70"></span>
@@ -176,13 +185,13 @@
       </nav>
 
       <div class="flex items-center gap-2 sm:gap-3">
-        <a href="https://t.me/PUMPCATsol" target="_blank" rel="noopener noreferrer" class="rounded-full border-2 border-pump-ink bg-white p-1.5 shadow-comic transition hover:-translate-y-0.5" aria-label="Telegram">
+        <a href="https://t.me/PUMPCATsol_portal" target="_blank" rel="noopener noreferrer" class="rounded-full border-2 border-pump-ink bg-white p-1.5 shadow-comic transition hover:-translate-y-0.5" aria-label="Telegram">
           <img src="tg.png" alt="" class="h-7 w-7 rounded-full object-cover" />
         </a>
-        <a href="https://x.com/PUMPCATsol" target="_blank" rel="noopener noreferrer" class="rounded-full border-2 border-pump-ink bg-black p-1.5 shadow-comic transition hover:-translate-y-0.5" aria-label="X / Twitter">
+        <a href="https://x.com/PUMPCATsol_x" target="_blank" rel="noopener noreferrer" class="rounded-full border-2 border-pump-ink bg-black p-1.5 shadow-comic transition hover:-translate-y-0.5" aria-label="X / Twitter">
           <img src="x.png" alt="" class="h-7 w-7 rounded-full object-cover" />
         </a>
-        <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA" target="_blank" rel="noopener noreferrer" class="hidden rounded-full border-4 border-pump-ink bg-pump-500 px-4 py-2 font-display text-sm text-white shadow-comic transition hover:-translate-y-0.5 hover:bg-pump-400 sm:inline-block">
+        <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=HBsr5gwppcXcT5MRjzEjKYAum5h9zgHrZsJGXUVkpump" target="_blank" rel="noopener noreferrer" class="rounded-full border-4 border-pump-ink bg-pump-500 px-3 py-2 font-display text-sm text-white shadow-comic transition hover:-translate-y-0.5 hover:bg-pump-400 sm:px-4">
           Buy Now
         </a>
       </div>
@@ -226,7 +235,7 @@
           <p class="inline-flex items-center gap-2 rounded-full border-2 border-pump-ink bg-white px-4 py-1 font-round text-sm font-semibold text-pump-700 shadow-comic">
             Solana meme. Green cap. Zero chill.
           </p>
-          <h1 class="mt-5 font-display text-5xl leading-[0.95] text-pump-600 sm:text-7xl">
+          <h1 class="title-pop mt-5 font-display text-5xl leading-[0.95] sm:text-7xl">
             PUMPCAT
           </h1>
           <p class="mt-2 font-display text-2xl text-pump-800 sm:text-3xl">$PUMPCAT</p>
@@ -236,10 +245,10 @@
           </p>
 
           <div class="mt-8 flex flex-wrap items-center gap-3">
-            <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA" target="_blank" rel="noopener noreferrer" class="rounded-full border-4 border-pump-ink bg-pump-500 px-7 py-3 font-display text-xl text-white shadow-comic transition hover:-translate-y-1 hover:bg-pump-400">
+            <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=HBsr5gwppcXcT5MRjzEjKYAum5h9zgHrZsJGXUVkpump" target="_blank" rel="noopener noreferrer" class="rounded-full border-4 border-pump-ink bg-pump-500 px-7 py-3 font-display text-xl text-white shadow-comic transition hover:-translate-y-1 hover:bg-pump-400">
               Buy Now
             </a>
-            <a href="https://dexscreener.com/solana/TBA" target="_blank" rel="noopener noreferrer" class="rounded-full border-4 border-pump-ink bg-white px-7 py-3 font-display text-xl text-pump-800 shadow-comic transition hover:-translate-y-1 hover:bg-pump-50">
+            <a href="https://dexscreener.com/solana/HBsr5gwppcXcT5MRjzEjKYAum5h9zgHrZsJGXUVkpump" target="_blank" rel="noopener noreferrer" class="rounded-full border-4 border-pump-ink bg-white px-7 py-3 font-display text-xl text-pump-800 shadow-comic transition hover:-translate-y-1 hover:bg-pump-50">
               Chart
             </a>
           </div>
@@ -247,11 +256,11 @@
           <div class="mt-6 flex max-w-xl flex-col gap-3 rounded-2xl border-4 border-pump-ink bg-white p-3 shadow-comic sm:flex-row sm:items-center">
             <div class="min-w-0 flex-1">
               <p class="font-round text-xs font-semibold uppercase tracking-[0.2em] text-pump-600">Contract Address</p>
-              <p id="ca-text" class="truncate font-sans text-sm font-bold text-pump-ink sm:text-base">TBA</p>
+              <p id="ca-text" class="truncate font-sans text-sm font-bold text-pump-ink sm:text-base">HBsr5gwppcXcT5MRjzEjKYAum5h9zgHrZsJGXUVkpump</p>
             </div>
-            <button id="copy-ca" type="button" class="relative shrink-0 rounded-full border-4 border-pump-ink bg-pump-500 px-5 py-2 font-display text-white shadow-comic transition hover:bg-pump-400">
+            <button id="copy-ca" type="button" class="relative z-10 shrink-0 rounded-full border-4 border-pump-ink bg-pump-500 px-5 py-2 font-display text-white shadow-comic transition hover:bg-pump-400">
               Copy CA
-              <span id="copied" class="pointer-events-none absolute -top-10 left-1/2 hidden -translate-x-1/2 rounded-full border-2 border-pump-ink bg-white px-3 py-1 font-round text-xs font-bold text-pump-700">Copied!</span>
+              <span id="copied" class="pointer-events-none absolute -top-11 left-1/2 z-20 hidden -translate-x-1/2 rounded-full border-2 border-pump-ink bg-white px-3 py-1 font-round text-xs font-bold text-pump-700 shadow-comic">Copied!</span>
             </button>
           </div>
         </div>
@@ -295,13 +304,13 @@
     <section id="howtobuy" class="mx-auto max-w-7xl px-4 py-20">
       <div class="text-center">
         <p class="font-round text-sm font-bold uppercase tracking-[0.25em] text-pump-600">Four paws. Four steps.</p>
-        <h2 class="mt-2 font-display text-4xl text-pump-600 sm:text-6xl">How to Buy</h2>
+        <h2 class="title-pop mt-2 font-display text-4xl sm:text-6xl">How to Buy</h2>
         <p class="mx-auto mt-4 max-w-2xl font-round text-lg font-medium text-pump-900">
           Grab $PUMPCAT on Solana. No scratching required — just a wallet, some SOL, and a little chaos.
         </p>
       </div>
 
-      <ol class="mt-12 grid gap-6 md:grid-cols-2">
+      <ol class="mt-12 grid gap-6 px-3 md:grid-cols-2">
         <li class="relative rounded-3xl border-4 border-pump-ink bg-white p-6 shadow-comic">
           <span class="absolute -left-3 -top-3 flex h-12 w-12 items-center justify-center rounded-full border-4 border-pump-ink bg-pump-500 font-display text-2xl text-white">1</span>
           <h3 class="pl-8 font-display text-2xl text-pump-600">Get a Solana wallet</h3>
@@ -321,7 +330,7 @@
           <h3 class="pl-8 font-display text-2xl text-pump-600">Open the swap</h3>
           <p class="mt-3 font-round font-medium leading-relaxed text-pump-900">
             Hit <strong>Buy Now</strong> or paste the contract address into
-            <a class="font-bold text-pump-600 underline" href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA" target="_blank" rel="noopener noreferrer">pump.fun</a>.
+            <a class="font-bold text-pump-600 underline" href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=HBsr5gwppcXcT5MRjzEjKYAum5h9zgHrZsJGXUVkpump" target="_blank" rel="noopener noreferrer">pump.fun</a>.
             Always double-check the CA before you yeet.
           </p>
         </li>
@@ -335,10 +344,10 @@
       </ol>
 
       <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
-        <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA" target="_blank" rel="noopener noreferrer" class="rounded-full border-4 border-pump-ink bg-pump-500 px-8 py-3 font-display text-xl text-white shadow-comic transition hover:-translate-y-1 hover:bg-pump-400">
+        <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=HBsr5gwppcXcT5MRjzEjKYAum5h9zgHrZsJGXUVkpump" target="_blank" rel="noopener noreferrer" class="rounded-full border-4 border-pump-ink bg-pump-500 px-8 py-3 font-display text-xl text-white shadow-comic transition hover:-translate-y-1 hover:bg-pump-400">
           Buy $PUMPCAT Now
         </a>
-        <a href="https://dexscreener.com/solana/TBA" target="_blank" rel="noopener noreferrer" class="rounded-full border-4 border-pump-ink bg-white px-8 py-3 font-display text-xl text-pump-800 shadow-comic transition hover:-translate-y-1">
+        <a href="https://dexscreener.com/solana/HBsr5gwppcXcT5MRjzEjKYAum5h9zgHrZsJGXUVkpump" target="_blank" rel="noopener noreferrer" class="rounded-full border-4 border-pump-ink bg-white px-8 py-3 font-display text-xl text-pump-800 shadow-comic transition hover:-translate-y-1">
           Watch the Chart
         </a>
       </div>
@@ -349,10 +358,10 @@
         <div class="mb-8 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
           <div>
             <p class="font-round text-sm font-bold uppercase tracking-[0.25em] text-pump-600">Live candles. Zero blinking.</p>
-            <h2 class="mt-2 font-display text-4xl text-pump-600 sm:text-5xl">Chart</h2>
+            <h2 class="title-pop mt-2 font-display text-4xl sm:text-5xl">Chart</h2>
             <p class="mt-2 max-w-xl font-round font-medium text-pump-900">The charts are calling. Watch $PUMPCAT on Dexscreener — same energy as the green cap, just more numbers.</p>
           </div>
-          <a href="https://dexscreener.com/solana/TBA" target="_blank" rel="noopener noreferrer" class="rounded-full border-4 border-pump-ink bg-white px-5 py-2 font-display text-pump-800 shadow-comic">
+          <a href="https://dexscreener.com/solana/HBsr5gwppcXcT5MRjzEjKYAum5h9zgHrZsJGXUVkpump" target="_blank" rel="noopener noreferrer" class="rounded-full border-4 border-pump-ink bg-white px-5 py-2 font-display text-pump-800 shadow-comic">
             Open Dexscreener
           </a>
         </div>
@@ -360,7 +369,7 @@
           <div class="chart-wrap">
             <iframe
               title="PUMPCAT Dexscreener chart"
-              src="https://dexscreener.com/solana/TBA?embed=1&loadChartSettings=0&trades=0&tabs=0&info=0&chartLeftToolbar=0&chartTheme=light&theme=light&chartStyle=0&chartType=usd&interval=15"
+              src="https://dexscreener.com/solana/HBsr5gwppcXcT5MRjzEjKYAum5h9zgHrZsJGXUVkpump?embed=1&loadChartSettings=0&trades=0&tabs=0&info=0&chartLeftToolbar=0&chartTheme=light&theme=light&chartStyle=0&chartType=usd&interval=15"
             ></iframe>
           </div>
         </div>
@@ -376,10 +385,10 @@
               The memes are loading in Telegram. The charts get roasted on X. Come sit with the cat in the green cap — the pump already started without you.
             </p>
             <div class="mt-6 flex flex-wrap gap-3">
-              <a href="https://t.me/PUMPCATsol" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full border-4 border-pump-ink bg-white px-5 py-2 font-display text-lg text-pump-800 shadow-comic">
+              <a href="https://t.me/PUMPCATsol_portal" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full border-4 border-pump-ink bg-white px-5 py-2 font-display text-lg text-pump-800 shadow-comic">
                 <img src="tg.png" alt="" class="h-7 w-7 rounded-full" /> Telegram
               </a>
-              <a href="https://x.com/PUMPCATsol" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full border-4 border-pump-ink bg-pump-ink px-5 py-2 font-display text-lg text-white shadow-comic">
+              <a href="https://x.com/PUMPCATsol_x" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full border-4 border-pump-ink bg-pump-ink px-5 py-2 font-display text-lg text-white shadow-comic">
                 <img src="x.png" alt="" class="h-7 w-7 rounded-full object-cover" /> Twitter / X
               </a>
             </div>
@@ -407,7 +416,7 @@
   </footer>
 
   <script>
-    const CA = "TBA";
+    const CA = "HBsr5gwppcXcT5MRjzEjKYAum5h9zgHrZsJGXUVkpump";
     const copyBtn = document.getElementById("copy-ca");
     const copied = document.getElementById("copied");
 
