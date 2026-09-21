@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PUMPCAT | $PUMPCAT — The Cat Is Out of the Bag</title>
+  <meta name="description" content="The cat is out of the bag. The charts are calling. The memes are loading. PUMPCAT isn't just watching the pump — it's leading it." />
+  <link rel="icon" href="logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Fredoka:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pump: {
+              50: "#f3fdf6",
+              100: "#d9fbe6",
+              200: "#b6f5cd", 
+              300: "#7eecaa",
+              400: "#3ddc7a",
+              500: "#1ec85a",
+              600: "#14a348",
+              700: "#14803d",
+              800: "#166536",
+              900: "#14532d",
+              ink: "#052e16",
+              cream: "#fffdf8",
+              fur: "#e8d4b8",
+            },
+          },
+          fontFamily: {
+            display: ['"Luckiest Guy"', "cursive"],
+            round: ['"Fredoka"', "sans-serif"],
+            sans: ['"Outfit"', "system-ui", "sans-serif"],
+          },
+          boxShadow: {
+            comic: "6px 6px 0 0 #14532d",
+            "comic-lg": "10px 10px 0 0 #14532d",
+            "comic-green": "6px 6px 0 0 #1ec85a",
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    :root {
+      --ca: "TBA";
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(30, 200, 90, 0.22), transparent 55%),
+        radial-gradient(900px 500px at 110% 8%, rgba(62, 220, 122, 0.18), transparent 50%),
+        linear-gradient(180deg, #f7fff9 0%, #ffffff 28%, #f3fdf6 58%, #ffffff 100%);
+    }
+
+    .paw-pattern {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='%2314a348' fill-opacity='0.06'%3E%3Cellipse cx='70' cy='82' rx='22' ry='18'/%3E%3Cellipse cx='46' cy='58' rx='10' ry='13'/%3E%3Cellipse cx='64' cy='48' rx='10' ry='13'/%3E%3Cellipse cx='84' cy='50' rx='10' ry='13'/%3E%3Cellipse cx='98' cy='64' rx='10' ry='13'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .font-display {
+      letter-spacing: 0.04em;
+    }
+
+    .ticker {
+      animation: ticker 28s linear infinite;
+    }
+
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .float-slow {
+      animation: floaty 6s ease-in-out infinite;
+    }
+
+    .float-med {
+      animation: floaty 4.5s ease-in-out infinite;
+    }
+
+    .float-fast {
+      animation: floaty 3.4s ease-in-out infinite;
+    }
+
+    @keyframes floaty {
+      0%, 100% { transform: translateY(0) rotate(-6deg); }
+      50% { transform: translateY(-14px) rotate(6deg); }
+    }
+
+    .wiggle {
+      animation: wiggle 2.8s ease-in-out infinite;
+    }
+
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(-2deg); }
+      50% { transform: rotate(2.4deg); }
+    }
+
+    .pulse-ring {
+      animation: pulse-ring 2.4s ease-out infinite;
+    }
+
+    @keyframes pulse-ring {
+      0% { transform: scale(1); opacity: 0.55; }
+      100% { transform: scale(1.18); opacity: 0; }
+    }
+
+    .chart-wrap {
+      position: relative;
+      width: 100%;
+      padding-bottom: 125%;
+    }
+
+    @media (min-width: 1024px) {
+      .chart-wrap {
+        padding-bottom: 62%;
+      }
+    }
+
+    .chart-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .copied-pop {
+      animation: pop 1.6s ease forwards;
+    }
+
+    @keyframes pop {
+      0% { opacity: 0; transform: translateY(8px) scale(0.9); }
+      18% { opacity: 1; transform: translateY(0) scale(1); }
+      80% { opacity: 1; }
+      100% { opacity: 0; transform: translateY(-8px); }
+    }
+
+    .nav-blur {
+      backdrop-filter: blur(16px);
+      background: rgba(255, 255, 255, 0.78);
+    }
+  </style>
+</head>
+<body class="font-sans text-pump-ink paw-pattern overflow-x-hidden">
+  <!-- Floating pills -->
+  <div class="pointer-events-none fixed inset-0 z-0 overflow-hidden" aria-hidden="true">
+    <span class="float-slow absolute left-[6%] top-[18%] h-10 w-16 rounded-full bg-gradient-to-b from-white to-pump-500 border-[3px] border-pump-800 opacity-70"></span>
+    <span class="float-med absolute right-[8%] top-[32%] h-8 w-14 rounded-full bg-gradient-to-b from-pump-400 to-white border-[3px] border-pump-800 opacity-60"></span>
+    <span class="float-fast absolute left-[12%] bottom-[16%] h-7 w-12 rounded-full bg-gradient-to-b from-white to-pump-500 border-[3px] border-pump-800 opacity-50"></span>
+    <span class="float-slow absolute right-[14%] bottom-[22%] h-9 w-16 rounded-full bg-gradient-to-b from-pump-300 to-white border-[3px] border-pump-800 opacity-55"></span>
+  </div>
+
+  <header class="nav-blur sticky top-0 z-50 border-b-4 border-pump-ink">
+    <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
+      <a href="#top" class="flex items-center gap-3">
+        <img src="logo.png" alt="PUMPCAT logo" class="h-12 w-12 rounded-full border-4 border-pump-ink bg-white object-cover shadow-comic" />
+        <div>
+          <p class="font-display text-2xl leading-none text-pump-600">PUMPCAT</p>
+          <p class="font-round text-xs font-semibold tracking-widest text-pump-800">$PUMPCAT</p>
+        </div>
+      </a>
+
+      <nav class="hidden items-center gap-8 font-round text-sm font-semibold md:flex">
+        <a href="#about" class="hover:text-pump-600">About</a>
+        <a href="#howtobuy" class="hover:text-pump-600">How to Buy</a>
+        <a href="#chart" class="hover:text-pump-600">Chart</a>
+      </nav>
+
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="https://t.me/PUMPCATsol" target="_blank" rel="noopener noreferrer" class="rounded-full border-2 border-pump-ink bg-white p-1.5 shadow-comic transition hover:-translate-y-0.5" aria-label="Telegram">
+          <img src="tg.png" alt="" class="h-7 w-7 rounded-full object-cover" />
+        </a>
+        <a href="https://x.com/PUMPCATsol" target="_blank" rel="noopener noreferrer" class="rounded-full border-2 border-pump-ink bg-black p-1.5 shadow-comic transition hover:-translate-y-0.5" aria-label="X / Twitter">
+          <img src="x.png" alt="" class="h-7 w-7 rounded-full object-cover" />
+        </a>
+        <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA" target="_blank" rel="noopener noreferrer" class="hidden rounded-full border-4 border-pump-ink bg-pump-500 px-4 py-2 font-display text-sm text-white shadow-comic transition hover:-translate-y-0.5 hover:bg-pump-400 sm:inline-block">
+          Buy Now
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="relative z-10 overflow-hidden border-b-4 border-pump-ink bg-pump-500">
+    <div class="ticker flex w-max whitespace-nowrap py-2 font-display text-lg text-white sm:text-2xl">
+      <span class="px-6">THE CAT IS OUT OF THE BAG</span>
+      <span class="px-6">•</span>
+      <span class="px-6">$PUMPCAT</span>
+      <span class="px-6">•</span>
+      <span class="px-6">THE CHARTS ARE CALLING</span>
+      <span class="px-6">•</span>
+      <span class="px-6">THE MEMES ARE LOADING</span>
+      <span class="px-6">•</span>
+      <span class="px-6">NOT WATCHING THE PUMP — LEADING IT</span>
+      <span class="px-6">•</span>
+      <span class="px-6">THE CAT IS OUT OF THE BAG</span>
+      <span class="px-6">•</span>
+      <span class="px-6">$PUMPCAT</span>
+      <span class="px-6">•</span>
+      <span class="px-6">THE CHARTS ARE CALLING</span>
+      <span class="px-6">•</span>
+      <span class="px-6">THE MEMES ARE LOADING</span>
+      <span class="px-6">•</span>
+      <span class="px-6">NOT WATCHING THE PUMP — LEADING IT</span>
+      <span class="px-6">•</span>
+    </div>
+  </div>
+
+  <main id="top" class="relative z-10">
+    <section class="mx-auto max-w-7xl px-4 pb-16 pt-8 sm:pt-12">
+      <div class="relative overflow-hidden rounded-[2rem] border-4 border-pump-ink bg-white shadow-comic-lg">
+        <img src="banner.png" alt="PUMPCAT banner" class="w-full object-cover" />
+        <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-pump-ink/25 via-transparent to-transparent"></div>
+      </div>
+
+      <div class="mt-10 grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+        <div>
+          <p class="inline-flex items-center gap-2 rounded-full border-2 border-pump-ink bg-white px-4 py-1 font-round text-sm font-semibold text-pump-700 shadow-comic">
+            Solana meme. Green cap. Zero chill.
+          </p>
+          <h1 class="mt-5 font-display text-5xl leading-[0.95] text-pump-600 sm:text-7xl">
+            PUMPCAT
+          </h1>
+          <p class="mt-2 font-display text-2xl text-pump-800 sm:text-3xl">$PUMPCAT</p>
+          <p class="mt-6 max-w-xl font-round text-lg font-medium leading-relaxed text-pump-900 sm:text-xl">
+            The cat is out of the bag. The charts are calling. The memes are loading.
+            <span class="text-pump-600">PUMPCAT isn't just watching the pump — it's leading it.</span>
+          </p>
+
+          <div class="mt-8 flex flex-wrap items-center gap-3">
+            <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA" target="_blank" rel="noopener noreferrer" class="rounded-full border-4 border-pump-ink bg-pump-500 px-7 py-3 font-display text-xl text-white shadow-comic transition hover:-translate-y-1 hover:bg-pump-400">
+              Buy Now
+            </a>
+            <a href="https://dexscreener.com/solana/TBA" target="_blank" rel="noopener noreferrer" class="rounded-full border-4 border-pump-ink bg-white px-7 py-3 font-display text-xl text-pump-800 shadow-comic transition hover:-translate-y-1 hover:bg-pump-50">
+              Chart
+            </a>
+          </div>
+
+          <div class="mt-6 flex max-w-xl flex-col gap-3 rounded-2xl border-4 border-pump-ink bg-white p-3 shadow-comic sm:flex-row sm:items-center">
+            <div class="min-w-0 flex-1">
+              <p class="font-round text-xs font-semibold uppercase tracking-[0.2em] text-pump-600">Contract Address</p>
+              <p id="ca-text" class="truncate font-sans text-sm font-bold text-pump-ink sm:text-base">TBA</p>
+            </div>
+            <button id="copy-ca" type="button" class="relative shrink-0 rounded-full border-4 border-pump-ink bg-pump-500 px-5 py-2 font-display text-white shadow-comic transition hover:bg-pump-400">
+              Copy CA
+              <span id="copied" class="pointer-events-none absolute -top-10 left-1/2 hidden -translate-x-1/2 rounded-full border-2 border-pump-ink bg-white px-3 py-1 font-round text-xs font-bold text-pump-700">Copied!</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="relative mx-auto w-full max-w-md">
+          <div class="absolute -inset-3 rounded-[2.2rem] bg-pump-400/40 pulse-ring"></div>
+          <div class="relative overflow-hidden rounded-[2rem] border-4 border-pump-ink bg-white p-4 shadow-comic-lg">
+            <img src="logo.png" alt="PUMPCAT mascot" class="wiggle mx-auto w-full max-w-sm object-contain" />
+            <div class="mt-3 rounded-2xl border-4 border-pump-ink bg-pump-50 p-4 text-center">
+              <p class="font-display text-2xl text-pump-600">9 lives. 1 moon.</p>
+              <p class="mt-1 font-round text-sm font-medium text-pump-800">Green cap on. Bags open. Paws up.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="border-y-4 border-pump-ink bg-white/80">
+      <div class="mx-auto grid max-w-7xl gap-8 px-4 py-16 lg:grid-cols-3">
+        <article class="rounded-3xl border-4 border-pump-ink bg-pump-50 p-6 shadow-comic">
+          <p class="font-display text-3xl text-pump-600">The cat</p>
+          <p class="mt-3 font-round font-medium leading-relaxed text-pump-900">
+            PUMPCAT showed up in a green pill cap and refused to blink. While everyone else is watching candles, this cat is already on the next pump.
+          </p>
+        </article>
+        <article class="rounded-3xl border-4 border-pump-ink bg-white p-6 shadow-comic">
+          <p class="font-display text-3xl text-pump-600">The bag</p>
+          <p class="mt-3 font-round font-medium leading-relaxed text-pump-900">
+            The cat is out of the bag — and the bag is $PUMPCAT. Name: <strong>PUMPCAT</strong>. Symbol: <strong>PUMPCAT</strong>. Chain: Solana. Vibe: unhinged, caffeinated, green.
+          </p>
+        </article>
+        <article class="rounded-3xl border-4 border-pump-ink bg-pump-500 p-6 text-white shadow-comic">
+          <p class="font-display text-3xl">The call</p>
+          <p class="mt-3 font-round font-medium leading-relaxed">
+            The charts are calling. The memes are loading. PUMPCAT isn't just watching the pump — it's leading it. Join Telegram. Follow X. Copy the CA. Feed the cat.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="howtobuy" class="mx-auto max-w-7xl px-4 py-20">
+      <div class="text-center">
+        <p class="font-round text-sm font-bold uppercase tracking-[0.25em] text-pump-600">Four paws. Four steps.</p>
+        <h2 class="mt-2 font-display text-4xl text-pump-600 sm:text-6xl">How to Buy</h2>
+        <p class="mx-auto mt-4 max-w-2xl font-round text-lg font-medium text-pump-900">
+          Grab $PUMPCAT on Solana. No scratching required — just a wallet, some SOL, and a little chaos.
+        </p>
+      </div>
+
+      <ol class="mt-12 grid gap-6 md:grid-cols-2">
+        <li class="relative rounded-3xl border-4 border-pump-ink bg-white p-6 shadow-comic">
+          <span class="absolute -left-3 -top-3 flex h-12 w-12 items-center justify-center rounded-full border-4 border-pump-ink bg-pump-500 font-display text-2xl text-white">1</span>
+          <h3 class="pl-8 font-display text-2xl text-pump-600">Get a Solana wallet</h3>
+          <p class="mt-3 font-round font-medium leading-relaxed text-pump-900">
+            Download Phantom or Solflare. Create a wallet, lock it down, and keep those keys like a cat keeps a cardboard box: sacred.
+          </p>
+        </li>
+        <li class="relative rounded-3xl border-4 border-pump-ink bg-white p-6 shadow-comic">
+          <span class="absolute -left-3 -top-3 flex h-12 w-12 items-center justify-center rounded-full border-4 border-pump-ink bg-pump-500 font-display text-2xl text-white">2</span>
+          <h3 class="pl-8 font-display text-2xl text-pump-600">Load it with SOL</h3>
+          <p class="mt-3 font-round font-medium leading-relaxed text-pump-900">
+            Buy SOL on any exchange and send it to your wallet. SOL pays the gas and becomes the snack the cat swaps for $PUMPCAT.
+          </p>
+        </li>
+        <li class="relative rounded-3xl border-4 border-pump-ink bg-white p-6 shadow-comic">
+          <span class="absolute -left-3 -top-3 flex h-12 w-12 items-center justify-center rounded-full border-4 border-pump-ink bg-pump-500 font-display text-2xl text-white">3</span>
+          <h3 class="pl-8 font-display text-2xl text-pump-600">Open the swap</h3>
+          <p class="mt-3 font-round font-medium leading-relaxed text-pump-900">
+            Hit <strong>Buy Now</strong> or paste the contract address into
+            <a class="font-bold text-pump-600 underline" href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA" target="_blank" rel="noopener noreferrer">pump.fun</a>.
+            Always double-check the CA before you yeet.
+          </p>
+        </li>
+        <li class="relative rounded-3xl border-4 border-pump-ink bg-white p-6 shadow-comic">
+          <span class="absolute -left-3 -top-3 flex h-12 w-12 items-center justify-center rounded-full border-4 border-pump-ink bg-pump-500 font-display text-2xl text-white">4</span>
+          <h3 class="pl-8 font-display text-2xl text-pump-600">Swap SOL for $PUMPCAT</h3>
+          <p class="mt-3 font-round font-medium leading-relaxed text-pump-900">
+            Connect wallet. Swap SOL → $PUMPCAT. Confirm. Now you're in the bag. The cat is out of it — and leading the pump.
+          </p>
+        </li>
+      </ol>
+
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+        <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA" target="_blank" rel="noopener noreferrer" class="rounded-full border-4 border-pump-ink bg-pump-500 px-8 py-3 font-display text-xl text-white shadow-comic transition hover:-translate-y-1 hover:bg-pump-400">
+          Buy $PUMPCAT Now
+        </a>
+        <a href="https://dexscreener.com/solana/TBA" target="_blank" rel="noopener noreferrer" class="rounded-full border-4 border-pump-ink bg-white px-8 py-3 font-display text-xl text-pump-800 shadow-comic transition hover:-translate-y-1">
+          Watch the Chart
+        </a>
+      </div>
+    </section>
+
+    <section id="chart" class="border-y-4 border-pump-ink bg-pump-50/80">
+      <div class="mx-auto max-w-7xl px-4 py-16">
+        <div class="mb-8 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+          <div>
+            <p class="font-round text-sm font-bold uppercase tracking-[0.25em] text-pump-600">Live candles. Zero blinking.</p>
+            <h2 class="mt-2 font-display text-4xl text-pump-600 sm:text-5xl">Chart</h2>
+            <p class="mt-2 max-w-xl font-round font-medium text-pump-900">The charts are calling. Watch $PUMPCAT on Dexscreener — same energy as the green cap, just more numbers.</p>
+          </div>
+          <a href="https://dexscreener.com/solana/TBA" target="_blank" rel="noopener noreferrer" class="rounded-full border-4 border-pump-ink bg-white px-5 py-2 font-display text-pump-800 shadow-comic">
+            Open Dexscreener
+          </a>
+        </div>
+        <div class="overflow-hidden rounded-3xl border-4 border-pump-ink bg-white shadow-comic-lg">
+          <div class="chart-wrap">
+            <iframe
+              title="PUMPCAT Dexscreener chart"
+              src="https://dexscreener.com/solana/TBA?embed=1&loadChartSettings=0&trades=0&tabs=0&info=0&chartLeftToolbar=0&chartTheme=light&theme=light&chartStyle=0&chartType=usd&interval=15"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-4 py-20">
+      <div class="overflow-hidden rounded-[2rem] border-4 border-pump-ink bg-pump-500 text-white shadow-comic-lg">
+        <div class="grid items-center gap-8 p-8 md:grid-cols-[1fr_auto] md:p-12">
+          <div>
+            <h2 class="font-display text-4xl sm:text-5xl">Join the litter</h2>
+            <p class="mt-4 max-w-xl font-round text-lg font-medium leading-relaxed">
+              The memes are loading in Telegram. The charts get roasted on X. Come sit with the cat in the green cap — the pump already started without you.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a href="https://t.me/PUMPCATsol" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full border-4 border-pump-ink bg-white px-5 py-2 font-display text-lg text-pump-800 shadow-comic">
+                <img src="tg.png" alt="" class="h-7 w-7 rounded-full" /> Telegram
+              </a>
+              <a href="https://x.com/PUMPCATsol" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full border-4 border-pump-ink bg-pump-ink px-5 py-2 font-display text-lg text-white shadow-comic">
+                <img src="x.png" alt="" class="h-7 w-7 rounded-full object-cover" /> Twitter / X
+              </a>
+            </div>
+          </div>
+          <img src="logo.png" alt="" class="mx-auto h-44 w-44 rounded-full border-4 border-pump-ink bg-white object-cover shadow-comic-lg md:h-56 md:w-56" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="relative z-10 border-t-4 border-pump-ink bg-white">
+    <div class="mx-auto flex max-w-7xl flex-col items-center gap-4 px-4 py-10 text-center">
+      <div class="flex items-center gap-3">
+        <img src="logo.png" alt="" class="h-10 w-10 rounded-full border-2 border-pump-ink object-cover" />
+        <p class="font-display text-2xl text-pump-600">PUMPCAT · $PUMPCAT</p>
+      </div>
+      <p class="max-w-2xl font-round text-sm font-medium text-pump-800">
+        The cat is out of the bag. The charts are calling. The memes are loading. PUMPCAT isn't just watching the pump — it's leading it.
+      </p>
+      <p class="max-w-2xl font-round text-xs text-pump-700/80">
+        $PUMPCAT is a meme coin on Solana with no intrinsic value. This site is for entertainment. Do your own research. Never invest more than you can afford to lose.
+      </p>
+      <p class="font-round text-xs font-semibold text-pump-600">© 2026 PUMPCAT</p>
+    </div>
+  </footer>
+
+  <script>
+    const CA = "TBA";
+    const copyBtn = document.getElementById("copy-ca");
+    const copied = document.getElementById("copied");
+
+    copyBtn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(CA);
+      } catch {
+        const input = document.createElement("textarea");
+        input.value = CA;
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand("copy");
+        input.remove();
+      }
+      copied.classList.remove("hidden");
+      copied.classList.add("copied-pop");
+      window.setTimeout(() => {
+        copied.classList.add("hidden");
+        copied.classList.remove("copied-pop");
+      }, 1600);
+    });
+  </script>
+</body>
+</html>
