@@ -170,9 +170,9 @@
 
   <header class="nav-blur sticky top-0 z-50 border-b-4 border-pump-ink">
     <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
-      <a href="#top" class="flex items-center gap-3">
-        <img src="logo.png" alt="PUMPCAT logo" class="h-12 w-12 rounded-full border-4 border-pump-ink bg-white object-cover shadow-comic" />
-        <div>
+      <a href="#top" class="flex min-w-0 items-center gap-2 sm:gap-3">
+        <img src="logo.png" alt="PUMPCAT logo" class="h-10 w-10 rounded-full border-4 border-pump-ink bg-white object-cover shadow-comic sm:h-12 sm:w-12" />
+        <div class="hidden sm:block">
           <p class="font-display text-2xl leading-none text-pump-600">PUMPCAT</p>
           <p class="font-round text-xs font-semibold tracking-widest text-pump-800">$PUMPCAT</p>
         </div>
@@ -191,7 +191,7 @@
         <a href="https://x.com/PUMPCATsol_x" target="_blank" rel="noopener noreferrer" class="rounded-full border-2 border-pump-ink bg-black p-1.5 shadow-comic transition hover:-translate-y-0.5" aria-label="X / Twitter">
           <img src="x.png" alt="" class="h-7 w-7 rounded-full object-cover" />
         </a>
-        <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=HBsr5gwppcXcT5MRjzEjKYAum5h9zgHrZsJGXUVkpump" target="_blank" rel="noopener noreferrer" class="rounded-full border-4 border-pump-ink bg-pump-500 px-3 py-2 font-display text-sm text-white shadow-comic transition hover:-translate-y-0.5 hover:bg-pump-400 sm:px-4">
+        <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=HBsr5gwppcXcT5MRjzEjKYAum5h9zgHrZsJGXUVkpump" target="_blank" rel="noopener noreferrer" class="whitespace-nowrap rounded-full border-4 border-pump-ink bg-pump-500 px-3 py-2 font-display text-xs text-white shadow-comic transition hover:-translate-y-0.5 hover:bg-pump-400 sm:px-4 sm:text-sm">
           Buy Now
         </a>
       </div>
@@ -436,7 +436,7 @@
       window.setTimeout(() => {
         copied.classList.add("hidden");
         copied.classList.remove("copied-pop");
-      }, 1600);
+      }, 1600); 
     });
   </script>
 </body>
